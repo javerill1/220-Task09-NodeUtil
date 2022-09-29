@@ -12,8 +12,7 @@ import org.junit.jupiter.api.Test;
 
 public class NodeUtilTest {
 
-
-   
+    
     @Test
     public void testLoopNodeUtil(){
         testAllNodeUtil(new LoopNodeUtil<>());
@@ -21,12 +20,12 @@ public class NodeUtilTest {
 
     public void testAllNodeUtil(NodeUtil<Integer> toTest){
         countTest(toTest);
-        containsTest(toTest);
-        countOccurrencesTest(toTest);
-        nodeAtIndexTest(toTest);
-        indexOfFirstNodeContainingTest(toTest);
-        removeFirstTest(toTest);
-        removeAllTest(toTest);
+        // containsTest(toTest);
+        // countOccurrencesTest(toTest);
+        // nodeAtIndexTest(toTest);
+        // indexOfFirstNodeContainingTest(toTest);
+        // removeFirstTest(toTest);
+        // removeAllTest(toTest);
     }
 
     public void countTest(NodeUtil<Integer> toTest){
