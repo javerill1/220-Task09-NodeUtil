@@ -25,4 +25,8 @@ public class LinkedNode<T> {
         return next;
     }
 
+    public boolean contains() {
+        return false;
+    }
+
 }

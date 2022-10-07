@@ -12,18 +12,19 @@ import org.junit.jupiter.api.Test;
 
 public class NodeUtilTest {
 
-    
+
     @Test
-    public void testLoopNodeUtil(){
-        testAllNodeUtil(new LoopNodeUtil<>());
+    public void TestRecursiveNodeUtil(){
+        testAllNodeUtil(new RecursiveNodeUtil<>());
     }
 
     public void testAllNodeUtil(NodeUtil<Integer> toTest){
-        countTest(toTest);
+        // countTest(toTest);
         // containsTest(toTest);
         // countOccurrencesTest(toTest);
         // nodeAtIndexTest(toTest);
         // indexOfFirstNodeContainingTest(toTest);
+        indexOfLastNodeContainingTest(toTest);
         // removeFirstTest(toTest);
         // removeAllTest(toTest);
     }
@@ -123,8 +124,7 @@ public class NodeUtilTest {
         assertEquals(6, toTest.indexOfLastNodeContaining(example, 2));
 
         assertEquals(1, toTest.indexOfLastNodeContaining(example.getNext(), 8));
-        assertEquals(6, toTest.indexOfFirstNodeContaining(example.getNext(), 5));
-
+        assertEquals(6, toTest.indexOfLastNodeContaining(example.getNext(), 5));
 
         assertEquals(-1, toTest.indexOfLastNodeContaining(example, 6));
         assertEquals(-1, toTest.indexOfLastNodeContaining(example.getNext().getNext(), 4));
