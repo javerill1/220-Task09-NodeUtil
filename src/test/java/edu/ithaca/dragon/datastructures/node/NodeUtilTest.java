@@ -24,7 +24,7 @@ public class NodeUtilTest {
         // countOccurrencesTest(toTest);
         // nodeAtIndexTest(toTest);
         // indexOfFirstNodeContainingTest(toTest);
-        indexOfLastNodeContainingTest(toTest);
+        // indexOfLastNodeContainingTest(toTest);
         // removeFirstTest(toTest);
         // removeAllTest(toTest);
     }

@@ -1,5 +1,7 @@
 package edu.ithaca.dragon.datastructures.node;
 
+import java.util.NoSuchElementException;
+
 public class RecursiveNodeUtil<T> implements NodeUtil<T>{
 
     @Override
@@ -122,19 +124,40 @@ public class RecursiveNodeUtil<T> implements NodeUtil<T>{
     }
 
     @Override
-    public LinkedNode<T> removeFirst(LinkedNode<T> aNode, T itemToRemove) {
-        // TODO Auto-generated method stub
-        return null;
+    public LinkedNode<T> removeFirst(LinkedNode<T> aNode, T itemToRemove) { // non-tail recursive way
+        // if the LinkedList doesn't contain
+        if (!contains(aNode, itemToRemove)){
+            throw new NoSuchElementException();
+        }
+        // if there are no nodes at all
+        if (aNode == null) {
+            return null;
+        }
+        // if the current node is the thing to remove then return a pointer to the following node
+        if (aNode.getItem() == itemToRemove) {
+            aNode = aNode.getNext();
+            return aNode;
+        }
+        // if its not then all you want to do is make a recursive call on this function and then set next to where the pointer is
+        aNode.setNext(removeFirst(aNode.getNext(), itemToRemove));
+        return aNode;
     }
 
     @Override
     public LinkedNode<T> removeAll(LinkedNode<T> aNode, T itemToRemove) {
-        // TODO Auto-generated method stub
-        return null;
+        // if the LinkedList is empty
+        if (aNode == null) {
+            return null;
+        }
+        // if the node is equal to itemToRemove make recursive call of removeAll
+        // removing the node
+        if (aNode.getItem() == itemToRemove) {
+            return removeAll(aNode.getNext(), itemToRemove);
+        }
+        // setting the next node and making a recursive call
+        // setting the pointer to the next node
+        aNode.setNext(removeAll(aNode.getNext(), itemToRemove));
+        return aNode;
     }
-    
 
-
-
-    
 }
